@@ -11,9 +11,9 @@ public class MenuManager {
 
 		while(select_menu != 5) {
 			System.out.print("MENU\n");
-			System.out.println("1. Add Lectures");
-			System.out.println("2. Delete Lectures");
-			System.out.println("3. Edit Lectures");
+			System.out.println("1. Add Lecture");
+			System.out.println("2. Delete Lecture");
+			System.out.println("3. Edit Lecture");
 			System.out.println("4. View Lectures");
 			System.out.println("5. Exit");
 			System.out.print("Select one number between 1 - 5 : ");
@@ -30,7 +30,7 @@ public class MenuManager {
 				lecturemanager.editLecture();
 			} // end of else if
 			else if(select_menu == 4) {
-				lecturemanager.viewLecture();
+				lecturemanager.viewLectures();
 			} // end of else if
 			else {
 				continue;
