@@ -47,12 +47,12 @@ public class GeneralElectiveSubject extends Lecture {
 		} // end of while
 
 		System.out.print("Input Professor's Name of Lecture : ");
-		String Pname = ques.next();
+		String Pname = ques.nextLine();
 		this.setPname(Pname);
-		Pname = ques.next();
-//		ques.next();
+		Pname = ques.nextLine();
+
 		System.out.print("Input Professor's Number of Lecture : ");
-		String Pnum = ques.next();
+		String Pnum = ques.nextLine();
 		this.setPnum(Pnum);
 	} // end of getUserInput()
 	

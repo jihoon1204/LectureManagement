@@ -17,7 +17,7 @@ public class LectureManager {
 	public void addLecture() {
 		Lecture lecture;
 		int kind = 0;
-		while (kind != 1 && kind != 2) {
+		while (kind != 1 && kind != 2 && kind != 3) {
 			System.out.println("1 for Major_Subject");
 			System.out.println("2 for Selective_Major_Subject");
 			System.out.println("3 for General_Elective_Subject");
@@ -31,16 +31,15 @@ public class LectureManager {
 				break;
 			} else if (kind == 2) {
 				lecture = new SelectiveMajorSubject(LectureKind.SelectiveMajorSubject);
-				lecture.getUserInput(ques); 
+				lecture.getUserInput(ques);
 				lectures.add(lecture); // lectures배열 목록에 정보 추가 /////////////////
 				break;
-			} else if (kind ==3) {
+			} else if (kind == 3) {
 				lecture = new GeneralElectiveSubject(LectureKind.GeneralElectiveSubject);
 				lecture.getUserInput(ques);
 				lectures.add(lecture);
 				break;
-			}
-			else {
+			} else {
 				System.out.print("Select Lecture Kind betwwen 1 and 2 : ");
 			} // end of if-else
 		} // end of while
@@ -68,7 +67,6 @@ public class LectureManager {
 			System.out.println("the lecture has not been registered");
 			return;
 		} // end of else
-
 	} // end of deleteLecture()
 
 	public void editLecture() {
