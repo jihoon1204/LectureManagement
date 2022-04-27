@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import lecture.GeneralElectiveSubject;
+import lecture.LectureKind;
 import lecture.Lecture;
+import lecture.GeneralElectiveSubject;
+import lecture.SelectiveMajorSubject;
 
 public class LectureManager {
 	ArrayList<Lecture> lectures = new ArrayList<Lecture>(); // Lecture class의 lecture 객체 생성
@@ -16,22 +18,29 @@ public class LectureManager {
 		Lecture lecture;
 		int kind = 0;
 		while (kind != 1 && kind != 2) {
-			System.out.print("1 for Major_Subject");
-			System.out.print("2 for General_Elective_Subject");
+			System.out.println("1 for Major_Subject");
+			System.out.println("2 for Selective_Major_Subject");
+			System.out.println("3 for General_Elective_Subject");
 
-			System.out.print("Select Lecture Kind between 1 and 2 : ");
+			System.out.print("Select Lecture Kind 1 to 3 : ");
 			kind = ques.nextInt();
 			if (kind == 1) {
-				lecture = new Lecture(); // ArrayList Lectures 생성
+				lecture = new Lecture(LectureKind.MajorSubject); // ArrayList Lectures 생성
 				lecture.getUserInput(ques);
 				lectures.add(lecture); // lectures배열 목록에 정보 추가 /////////////////
 				break;
 			} else if (kind == 2) {
-				lecture = new GeneralElectiveSubject();
+				lecture = new SelectiveMajorSubject(LectureKind.SelectiveMajorSubject);
 				lecture.getUserInput(ques); 
 				lectures.add(lecture); // lectures배열 목록에 정보 추가 /////////////////
 				break;
-			} else {
+			} else if (kind ==3) {
+				lecture = new GeneralElectiveSubject(LectureKind.GeneralElectiveSubject);
+				lecture.getUserInput(ques);
+				lectures.add(lecture);
+				break;
+			}
+			else {
 				System.out.print("Select Lecture Kind betwwen 1 and 2 : ");
 			} // end of if-else
 		} // end of while

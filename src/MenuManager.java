@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-import LectureManagements.LectureManager;
+//import LectureManagements.LectureManager;
 
 public class MenuManager {
 	public static void main(String[] args) {		
@@ -18,8 +18,7 @@ public class MenuManager {
 			System.out.println("5. Exit");
 			System.out.print("Select one number between 1 - 5 : ");
 			select_menu = ques.nextInt();
-			
-			
+				
 			if(select_menu == 1) {
 				lecturemanager.addLecture();
 			} // end of if

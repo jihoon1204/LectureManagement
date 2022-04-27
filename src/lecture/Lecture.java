@@ -3,8 +3,8 @@ package lecture;
 import java.util.Scanner;
 
 public class Lecture { // class Lecture에 대한 변수 생성
-	Scanner ques; 
-	
+	Scanner ques;
+
 	protected LectureKind kind = LectureKind.MajorSubject;
 	protected int id;
 	protected String name;
@@ -17,6 +17,23 @@ public class Lecture { // class Lecture에 대한 변수 생성
 	public Lecture() {
 
 	} // end of Lecture
+
+	public Lecture(LectureKind kind) {
+		this.kind = kind;
+	}
+
+	public Lecture(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	public Lecture(int id, String name, String day, String time, String place) {
+		this.id = id;
+		this.name = name;
+		this.day = day;
+		this.time = time;
+		this.place = place;
+	}
 
 	public Lecture(int id, String name, String day, String time, String place, String Pname, String Pnum) {
 		this.id = id;
@@ -93,11 +110,24 @@ public class Lecture { // class Lecture에 대한 변수 생성
 	}
 
 	public void printInfo() { // printInfo 함수 생성
-		System.out.println("Lecture Id : " + id + "\nLecture name : " + name + "\nLecture day : " + day
-				+ "\nLecture time : " + time + "\nLecture place : " + place + "\nProfessor Name : " + Pname
+		String skind = "none";
+		switch (this.kind) {
+		case MajorSubject:
+			skind = "Major";
+			break;
+		case GeneralElectiveSubject:
+			skind = "Elective";
+			break;
+		case SelectiveMajorSubject:
+			skind = "Selective";
+		default:
+
+		}
+		System.out.println("kind : " + skind + "Lecture Id : " + id + "\nLecture name : " + name + "\nLecture day : "
+				+ day + "\nLecture time : " + time + "\nLecture place : " + place + "\nProfessor Name : " + Pname
 				+ "\nProfessor Number : " + Pnum);
 	} // end of printInfo
-	
+
 	public void getUserInput(Scanner ques) {
 		System.out.print("Input Lecture Id : ");
 		int id = ques.nextInt();
@@ -107,15 +137,15 @@ public class Lecture { // class Lecture에 대한 변수 생성
 		System.out.print("Input Lecture Name : ");
 		String name = ques.nextLine();
 		this.setName(name);
-		
+
 		System.out.print("Input the Day of Lecture : ");
 		String day = ques.nextLine();
 		this.setDay(day);
-		
+
 		System.out.print("Input the Time of Lecture : ");
 		String time = ques.nextLine();
 		this.setTime(time);
-		
+
 		System.out.print("Input the Place of Lecture : ");
 		String place = ques.nextLine();
 		this.setPlace(place);
@@ -123,7 +153,7 @@ public class Lecture { // class Lecture에 대한 변수 생성
 		System.out.print("Input Professor's Name of Lecture : ");
 		String Pname = ques.nextLine();
 		this.setPname(Pname);
-		
+
 		System.out.print("Input Professor's Number of Lecture : ");
 		String Pnum = ques.nextLine();
 		this.setPnum(Pnum);
