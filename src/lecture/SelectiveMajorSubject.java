@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class SelectiveMajorSubject extends Lecture {
 	
+	protected String anotherPlace;
+
 	public SelectiveMajorSubject(LectureKind kind) {
 		super(kind);
-	}	
-	
+	}
+
 	public void getUserInput(Scanner ques) {
 		System.out.print("Input Lecture Id : ");
 		int id = ques.nextInt();
@@ -33,42 +35,40 @@ public class SelectiveMajorSubject extends Lecture {
 			if (answer == 'Y' || answer == 'y') {
 				System.out.print("Input the Place of Lecture : ");
 				String place = ques.next();
-				ques.nextLine();
 				this.setPlace(place);
 				break;
 			} else if (answer == 'n' || answer == 'N') {
-				this.setPlace(" ");
+				this.setPlace("");
 				break;
 			} else {
 			} // end of if-else
 		} // end of while
-
 		System.out.print("Input Professor's Name of Lecture : ");
-		String Pname = ques.nextLine();
+		String Pname = ques.next();
 		this.setPname(Pname);
 		Pname = ques.nextLine();
 
 		System.out.print("Input Professor's Number of Lecture : ");
-		String Pnum = ques.nextLine();
+		String Pnum = ques.next();
 		this.setPnum(Pnum);
 	} // end of getUserInput()
-	
+
 	public void printInfo() { // printInfo 함수 생성
 		String skind = "none";
-		switch(this.kind) {
+		switch (this.kind) {
 		case MajorSubject:
 			skind = "Major";
 			break;
 		case GeneralElectiveSubject:
 			skind = "Elective";
-			break; 
+			break;
 		case SelectiveMajorSubject:
 			skind = "Selective";
 		default:
-			
+
 		}
-		System.out.println("kind : "+skind+ "Lecture Id : " + id + "\nLecture name : " + name + "\nLecture day : " + day
-				+ "\nLecture time : " + time + "\nOther Lecture place (except 407) : " + anotherPlace + "\nProfessor Name : " + Pname
-				+ "\nProfessor Number : " + Pnum);
+		System.out.println("kind : " + skind + "Lecture Id : " + id + "\nLecture name : " + name + "\nLecture day : "
+				+ day + "\nLecture time : " + time + "\nOther Lecture place (except 407) : " + anotherPlace
+				+ "\nProfessor Name : " + Pname + "\nProfessor Number : " + Pnum);
 	} // end of printInfo
 }

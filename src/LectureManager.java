@@ -21,7 +21,6 @@ public class LectureManager {
 			System.out.println("1 for Major_Subject");
 			System.out.println("2 for Selective_Major_Subject");
 			System.out.println("3 for General_Elective_Subject");
-
 			System.out.print("Select Lecture Kind 1 to 3 : ");
 			kind = ques.nextInt();
 			if (kind == 1) {
@@ -40,7 +39,7 @@ public class LectureManager {
 				lectures.add(lecture);
 				break;
 			} else {
-				System.out.print("Select Lecture Kind betwwen 1 and 2 : ");
+				System.out.print("Select Lecture Kind between 1 and 3 : ");
 			} // end of if-else
 		} // end of while
 	} // end of addLecutre()

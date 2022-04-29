@@ -48,51 +48,67 @@ public class Lecture { // class Lecture에 대한 변수 생성
 	public LectureKind getKind() {
 		return kind;
 	}
+
 	public void setKind(LectureKind kind) {
 		this.kind = kind;
 	}
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getDay() {
 		return day;
 	}
+
 	public void setDay(String day) {
 		this.day = day;
 	}
+
 	public String getTime() {
 		return time;
 	}
+
 	public void setTime(String time) {
 		this.time = time;
 	}
+
 	public String getPlace() {
 		return place;
 	}
+
 	public void setPlace(String place) {
 		this.place = place;
 	}
+
 	public String getPname() {
 		return Pname;
 	}
+
 	public void setPname(String pname) {
 		Pname = pname;
 	}
+
 	public String getPnum() {
 		return Pnum;
 	}
+
 	public void setPnum(String pnum) {
 		Pnum = pnum;
 	}
+
 	public void printInfo() { // printInfo 함수 생성
 		String skind = "none";
 		switch (this.kind) {
