@@ -71,4 +71,4 @@ public class SelectiveMajorSubject extends Lecture {
 				+ day + "\nLecture time : " + time + "\nOther Lecture place (except 407) : " + anotherPlace
 				+ "\nProfessor Name : " + Pname + "\nProfessor Number : " + Pnum);
 	} // end of printInfo
-}
+} // end of SelectiveMajorSubject Class
