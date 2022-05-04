@@ -2,11 +2,11 @@ package lecture;
 
 import java.util.Scanner;
 
-public class SelectiveMajorSubject extends Lecture {
-	
+public class ElectiveCourse extends Lecture implements LectureInput{
+
 	protected String anotherPlace;
 
-	public SelectiveMajorSubject(LectureKind kind) {
+	public ElectiveCourse(LectureKind kind) {
 		super(kind);
 	}
 
@@ -30,10 +30,10 @@ public class SelectiveMajorSubject extends Lecture {
 
 		char answer = 'x';
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N') {
-			System.out.print("Does the lecture take in 407? (Y/N) ");
+			System.out.print("Does the lecture take in another place except 407? (Y/N) ");
 			answer = ques.next().charAt(0);
 			if (answer == 'Y' || answer == 'y') {
-				System.out.print("Input the Place of Lecture : ");
+				System.out.print("Input the another Place of Lecture : ");
 				String place = ques.next();
 				this.setPlace(place);
 				break;
@@ -43,6 +43,7 @@ public class SelectiveMajorSubject extends Lecture {
 			} else {
 			} // end of if-else
 		} // end of while
+
 		System.out.print("Input Professor's Name of Lecture : ");
 		String Pname = ques.next();
 		this.setPname(Pname);
@@ -56,13 +57,13 @@ public class SelectiveMajorSubject extends Lecture {
 	public void printInfo() { // printInfo 함수 생성
 		String skind = "none";
 		switch (this.kind) {
-		case MajorSubject:
+		case CoreCourse:
 			skind = "Major";
 			break;
-		case GeneralElectiveSubject:
+		case ElectiveCourse:
 			skind = "Elective";
 			break;
-		case SelectiveMajorSubject:
+		case SelectiveMajorCourse:
 			skind = "Selective";
 		default:
 
@@ -71,4 +72,4 @@ public class SelectiveMajorSubject extends Lecture {
 				+ day + "\nLecture time : " + time + "\nOther Lecture place (except 407) : " + anotherPlace
 				+ "\nProfessor Name : " + Pname + "\nProfessor Number : " + Pnum);
 	} // end of printInfo
-} // end of SelectiveMajorSubject Class
+} // end of GeneralElectiveSubject Class

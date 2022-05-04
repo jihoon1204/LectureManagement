@@ -2,10 +2,10 @@ package lecture;
 
 import java.util.Scanner;
 
-public class Lecture { // class Lecture에 대한 변수 생성
+public abstract class Lecture { // class Lecture에 대한 변수 생성 -> abstract 추가하여 Lecture라는 객체를 생성하지 않는다.
 	Scanner ques;
 
-	protected LectureKind kind = LectureKind.MajorSubject;
+	protected LectureKind kind = LectureKind.CoreCourse;
 	protected int id;
 	protected String name;
 	protected String day;
@@ -109,53 +109,6 @@ public class Lecture { // class Lecture에 대한 변수 생성
 		Pnum = pnum;
 	}
 
-	public void printInfo() { // printInfo 함수 생성
-		String skind = "none";
-		switch (this.kind) {
-		case MajorSubject:
-			skind = "Major";
-			break;
-		case GeneralElectiveSubject:
-			skind = "Elective";
-			break;
-		case SelectiveMajorSubject:
-			skind = "Selective";
-		default:
-
-		}
-		System.out.println("kind : " + skind + "Lecture Id : " + id + "\nLecture name : " + name + "\nLecture day : "
-				+ day + "\nLecture time : " + time + "\nLecture place : " + place + "\nProfessor Name : " + Pname
-				+ "\nProfessor Number : " + Pnum);
-	} // end of printInfo
-
-	public void getUserInput(Scanner ques) {
-		System.out.print("Input Lecture Id : ");
-		int id = ques.nextInt();
-		this.setId(id);
-
-		ques.nextLine();
-		System.out.print("Input Lecture Name : ");
-		String name = ques.nextLine();
-		this.setName(name);
-
-		System.out.print("Input the Day of Lecture : ");
-		String day = ques.nextLine();
-		this.setDay(day);
-
-		System.out.print("Input the Time of Lecture : ");
-		String time = ques.nextLine();
-		this.setTime(time);
-
-		System.out.print("Input the Place of Lecture : ");
-		String place = ques.nextLine();
-		this.setPlace(place);
-
-		System.out.print("Input Professor's Name of Lecture : ");
-		String Pname = ques.nextLine();
-		this.setPname(Pname);
-
-		System.out.print("Input Professor's Number of Lecture : ");
-		String Pnum = ques.nextLine();
-		this.setPnum(Pnum);
-	} // end of getUserInput()
+	public abstract void printInfo(); // 인터페이스와 각각의 class에 입력시킴으로 abstract 사용
+	
 } // end of class

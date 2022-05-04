@@ -3,11 +3,13 @@ import java.util.Scanner;
 
 import lecture.LectureKind;
 import lecture.Lecture;
-import lecture.GeneralElectiveSubject;
-import lecture.SelectiveMajorSubject;
+import lecture.LectureInput;
+import lecture.CoreCourse;
+import lecture.ElectiveCourse;
+import lecture.SelectiveMajorCourse;
 
 public class LectureManager {
-	ArrayList<Lecture> lectures = new ArrayList<Lecture>(); // Lecture class의 lecture 객체 생성
+	ArrayList<LectureInput> lectures = new ArrayList<LectureInput>(); // Lecture class의 lecture 객체 생성
 	Scanner ques; // Scanner 정의
 
 	LectureManager(Scanner ques) {
@@ -15,28 +17,28 @@ public class LectureManager {
 	}// end of LectureMager
 
 	public void addLecture() {
-		Lecture lecture;
+		LectureInput lectureInput;
 		int kind = 0;
 		while (kind != 1 && kind != 2 && kind != 3) {
-			System.out.println("1 for Major_Subject");
-			System.out.println("2 for Selective_Major_Subject");
-			System.out.println("3 for General_Elective_Subject");
+			System.out.println("1 for Major_Course");
+			System.out.println("2 for Selective_Major_Course");
+			System.out.println("3 for Elective_Course");
 			System.out.print("Select Lecture Kind 1 to 3 : ");
 			kind = ques.nextInt();
 			if (kind == 1) {
-				lecture = new Lecture(LectureKind.MajorSubject); // ArrayList Lectures 생성
-				lecture.getUserInput(ques);
-				lectures.add(lecture); // lectures배열 목록에 정보 추가 /////////////////
+				lectureInput = new CoreCourse(LectureKind.CoreCourse); // ArrayList Lectures 생성
+				lectureInput.getUserInput(ques);
+				lectures.add(lectureInput); // lectures배열 목록에 정보 추가 
 				break;
 			} else if (kind == 2) {
-				lecture = new SelectiveMajorSubject(LectureKind.SelectiveMajorSubject);
-				lecture.getUserInput(ques);
-				lectures.add(lecture); // lectures배열 목록에 정보 추가 /////////////////
+				lectureInput = new SelectiveMajorCourse(LectureKind.SelectiveMajorCourse);
+				lectureInput.getUserInput(ques);
+				lectures.add(lectureInput); // lectures배열 목록에 정보 추가 
 				break;
 			} else if (kind == 3) {
-				lecture = new GeneralElectiveSubject(LectureKind.GeneralElectiveSubject);
-				lecture.getUserInput(ques);
-				lectures.add(lecture);
+				lectureInput = new ElectiveCourse(LectureKind.ElectiveCourse);
+				lectureInput.getUserInput(ques);
+				lectures.add(lectureInput);
 				break;
 			} else {
 				System.out.print("Select Lecture Kind between 1 and 3 : ");
@@ -48,9 +50,9 @@ public class LectureManager {
 
 		System.out.print("Input Lecture Id : ");
 		int LectureId = ques.nextInt();
-		int index = -1; // index 변수 정의 //////////////
+		int index = -1; // index 변수 정의 
 
-		for (int i = 0; i < lectures.size(); i++) { // ArrayList에 대한 null값을 찾는 반복문 생성 /////////////
+		for (int i = 0; i < lectures.size(); i++) { // ArrayList에 대한 null값을 찾는 반복문 생성 
 			if (lectures.get(i).getId() == LectureId) { // 반복문과 if문을 사용한 동일한 index의 위치 찾기
 				index = i;
 				break;
@@ -62,7 +64,7 @@ public class LectureManager {
 			System.out.println("The lecture(" + LectureId + ") is deleted.");
 		} // end of if
 
-		else { // lecture의 값이 남아있을때 ////////////////////
+		else { // lecture의 값이 남아있을때 
 			System.out.println("the lecture has not been registered");
 			return;
 		} // end of else
@@ -72,8 +74,8 @@ public class LectureManager {
 		System.out.print("Input Lecture Id : ");
 		int lectureId = ques.nextInt();
 		for (int i = 0; i < lectures.size(); i++) {
-			Lecture lecture = lectures.get(i);
-			if (lecture.getId() == lectureId) {
+			LectureInput lectureInput = lectures.get(i);
+			if (lectureInput.getId() == lectureId) {
 				int num = -1;
 				while (num != 8) {
 					System.out.print("MENU\n");
@@ -90,37 +92,37 @@ public class LectureManager {
 					if (num == 1) {
 						System.out.println("Lecture ID:");
 						int id = ques.nextInt();
-						lecture.setId(id);
+						lectureInput.setId(id);
 					} // end of if
 					else if (num == 2) {
 						System.out.println("Lecture Name:");
 						String name = ques.next();
-						lecture.setName(name);
+						lectureInput.setName(name);
 					} // end of else if
 					else if (num == 3) {
 						System.out.println("Lecture Day:");
 						String day = ques.next();
-						lecture.setDay(day);
+						lectureInput.setDay(day);
 					} // end of else if
 					else if (num == 4) {
 						System.out.println("Lecture Time:");
 						String time = ques.next();
-						lecture.setTime(time);
+						lectureInput.setTime(time);
 					} // end of else if
 					else if (num == 5) {
 						System.out.println("Lecture Place:");
 						String place = ques.next();
-						lecture.setPlace(place);
+						lectureInput.setPlace(place);
 					} // end of else if
 					else if (num == 6) {
 						System.out.println("Lecture PName:");
 						String Pname = ques.next();
-						lecture.setPname(Pname);
+						lectureInput.setPname(Pname);
 					} // end of else if
 					else if (num == 7) {
 						System.out.println("Lecture Pnum:");
 						String Pnum = ques.next();
-						lecture.setPnum(Pnum);
+						lectureInput.setPnum(Pnum);
 					} // end of else if
 					else {
 						continue;
@@ -132,8 +134,8 @@ public class LectureManager {
 	} // end of editLecture()
 
 	public void viewLectures() {
-		for (int i = 0; i < lectures.size(); i++) { // for문을 이용한 lectures get 함수 출력 //////////////////
-			lectures.get(i).printInfo(); // 그 객체의 정보 출력/////////////////
+		for (int i = 0; i < lectures.size(); i++) { // for문을 이용한 lectures get 함수 출력 
+			lectures.get(i).printInfo(); // 그 객체의 정보 출력
 		} // end of for
 	} // end of viewLecture
 } // end of class

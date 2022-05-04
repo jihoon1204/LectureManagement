@@ -1,6 +1,6 @@
 package lecture;
 
 public enum LectureKind {
-	MajorSubject, GeneralElectiveSubject, SelectiveMajorSubject
+	ElectiveCourse, SelectiveMajorCourse,CoreCourse
 
 }
