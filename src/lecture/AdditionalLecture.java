@@ -30,7 +30,7 @@ public abstract class AdditionalLecture extends Lecture {
 					setLecturePlace(ques);
 					break;
 				} else if (answer == 'n' || answer == 'N') {
-					this.setPlace("");
+					this.setPlace("407µ¿");
 					break;
 				} else {
 				} // end of if-else

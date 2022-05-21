@@ -30,7 +30,7 @@ public class SelectiveMajorCourse extends AdditionalLecture {
 					setLecturePlace(ques);
 					break;
 				} else if (answer == 'n' || answer == 'N') {
-					this.setPlace("");
+					this.setPlace("407동");
 					break;
 				} else {
 				} // end of if-else
@@ -43,7 +43,7 @@ public class SelectiveMajorCourse extends AdditionalLecture {
 	public void printInfo() { // printInfo 함수 생성
 		String skind = getKindString();
 		System.out.println("kind : " + skind + "\nLecture Id : " + id + "\nLecture name : " + name + "\nLecture day : "
-				+ day + "\nLecture time : " + time + "\nOther Lecture place (except 407) : " + place
+				+ day + "\nLecture time : " + time + "\nLecture place : " + place
 				+ "\nProfessor Name : " + Pname + "\nProfessor Number : " + Pnum);
 	} // end of printInfo
 

@@ -1,10 +1,16 @@
 package lecture;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exceptions.PlaceFormatException;
 
-public abstract class Lecture implements LectureInput { // class Lecture에 대한 변수 생성 -> abstract 추가하여 Lecture라는 객체를 생성하지
+public abstract class Lecture implements LectureInput, Serializable { /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8853942943022200338L;
+
+// class Lecture에 대한 변수 생성 -> abstract 추가하여 Lecture라는 객체를 생성하지
 														// 않는다.
 	Scanner ques;
 
@@ -93,7 +99,7 @@ public abstract class Lecture implements LectureInput { // class Lecture에 대한 
 	}
 
 	public void setPlace(String place) throws PlaceFormatException {
-		if (!place.contains("동") && !place.equals("")) {
+		if (!place.contains("동") && !place.equals("407동")) {
 			throw new PlaceFormatException();
 		}
 		this.place = place;
