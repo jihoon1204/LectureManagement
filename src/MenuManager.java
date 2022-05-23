@@ -19,6 +19,8 @@ public class MenuManager {
 		LectureManager lecturemanager = getObject("lecturemanager.ser");
 		if(lecturemanager == null) {
 			lecturemanager = new LectureManager(ques);
+		}else {
+			lecturemanager.ques = ques;
 		}
 		selectMenu(ques, lecturemanager);
 		putObject(lecturemanager, "lecturemanager.ser");

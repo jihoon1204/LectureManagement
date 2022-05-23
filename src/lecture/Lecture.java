@@ -10,8 +10,6 @@ public abstract class Lecture implements LectureInput, Serializable { /**
 	 */
 	private static final long serialVersionUID = -8853942943022200338L;
 
-// class Lecture에 대한 변수 생성 -> abstract 추가하여 Lecture라는 객체를 생성하지
-														// 않는다.
 	Scanner ques;
 
 	protected LectureKind kind = LectureKind.CoreCourse;

@@ -10,7 +10,6 @@ public abstract class AdditionalLecture extends Lecture {
 		super(kind);
 	}
 
-	@Override
 	public abstract void getUserInput(Scanner ques);
 
 	public void printInfo() { // printInfo 함수 생성
@@ -36,10 +35,7 @@ public abstract class AdditionalLecture extends Lecture {
 				} // end of if-else
 			} catch (PlaceFormatException e) {
 				System.out.println("Incorrect Place Format. Please include the word '동'.");
-
 			}
-
 		} // end of while
-
 	} // end of setLecturePlaceQues
 }
