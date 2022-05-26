@@ -9,12 +9,12 @@ import lecture.CoreCourse;
 import lecture.ElectiveCourse;
 import lecture.SelectiveMajorCourse;
 
-public class LectureManager implements Serializable{
+public class LectureManager implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1193343822948840007L;
-	
+
 	ArrayList<LectureInput> lectures = new ArrayList<LectureInput>(); // Lecture class의 lecture 객체 생성
 	transient Scanner ques; // Scanner 정의
 

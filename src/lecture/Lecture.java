@@ -145,27 +145,29 @@ public abstract class Lecture implements LectureInput, Serializable { /**
 
 	public void setLectureName(Scanner ques) {
 		System.out.println("Lecture Name:");
-		String name = ques.next();
+		ques.next();
+		String name = ques.nextLine();
 		this.setName(name);
 	} // end of setLectureName
 
 	public void setLectureDay(Scanner ques) {
 		System.out.println("Lecture Day:");
-		String day = ques.next();
+		String day = ques.nextLine();
 		this.setDay(day);
 	} // end of setLectureDay
 
 	public void setLectureTime(Scanner ques) {
 		System.out.println("Lecture Time:");
-		String time = ques.next();
+		String time = ques.nextLine();
 		this.setTime(time);
 	} // end of setLectureTime
 
 	public void setLecturePlace(Scanner ques) {
 		String place = "";
+		System.out.println("Lecture Place:");
 		while (!place.contains("µ¿")) {
-			System.out.println("Lecture Place:");
-			place = ques.next();
+			
+			place = ques.nextLine();
 			try {
 				this.setPlace(place);
 			} // end of try
@@ -177,13 +179,13 @@ public abstract class Lecture implements LectureInput, Serializable { /**
 
 	public void setLecturePname(Scanner ques) {
 		System.out.println("Lecture PName:");
-		String Pname = ques.next();
+		String Pname = ques.nextLine();
 		this.setPname(Pname);
 	} // end of setLecturePname
 
 	public void setLecturePnum(Scanner ques) {
 		System.out.println("Lecture Pnum:");
-		String Pnum = ques.next();
+		String Pnum = ques.nextLine();
 		this.setPnum(Pnum);
 	} // end of setLecturePnum
 

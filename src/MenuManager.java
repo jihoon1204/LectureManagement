@@ -7,19 +7,17 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
 import log.EventLogger;
-
 
 public class MenuManager {
 	static EventLogger logger = new EventLogger("log.txt");
-	
+
 	public static void main(String[] args) {
 		Scanner ques = new Scanner(System.in);
 		LectureManager lecturemanager = getObject("lecturemanager.ser");
-		if(lecturemanager == null) {
+		if (lecturemanager == null) {
 			lecturemanager = new LectureManager(ques);
-		}else {
+		} else {
 			lecturemanager.ques = ques;
 		}
 		selectMenu(ques, lecturemanager);
@@ -73,16 +71,16 @@ public class MenuManager {
 		System.out.println("5. Exit");
 		System.out.print("Select one number between 1 - 5 : ");
 	} // end of showMenu
-	
+
 	public static LectureManager getObject(String filename) {
 		LectureManager lecturemanager = null;
-		
+
 		try {
 			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in = new ObjectInputStream(file);
-			
+
 			lecturemanager = (LectureManager) in.readObject();
-			
+
 			in.close();
 			file.close();
 		} catch (FileNotFoundException e) {
@@ -95,15 +93,15 @@ public class MenuManager {
 		}
 		return lecturemanager;
 	}
-	
+
 	public static LectureManager putObject(LectureManager lecturemanager, String filename) {
 
 		try {
 			FileOutputStream file = new FileOutputStream(filename);
 			ObjectOutputStream out = new ObjectOutputStream(file);
-			
+
 			out.writeObject(lecturemanager);
-			
+
 			out.close();
 			file.close();
 		} catch (FileNotFoundException e) {
