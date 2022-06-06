@@ -1,15 +1,23 @@
 package gui;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-public class LectureAdder extends JFrame {
+import manager.LectureManager;
 
-	public LectureAdder() {
+public class LectureAdder extends JPanel {
+	
+	LectureManager lectureManager;
+	
+	WindowFrame frame;
+
+	public LectureAdder(WindowFrame frame) {
+		this.frame = frame;
+		
+		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
 
@@ -58,11 +66,10 @@ public class LectureAdder extends JFrame {
 		panel.add(new JButton("save"));
 		panel.add(new JButton("cancle"));
 
-		SpringUtilities.makeCompactGrid(panel, 7, 2, 6, 6, 6, 6);
+		SpringUtilities.makeCompactGrid(panel, 7, 2, 5, 5, 5, 5);
 
-		this.setSize(1000, 1000);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setContentPane(panel);
+
+		this.add(panel);
 		this.setVisible(true);
 	}
 }

@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -7,6 +8,7 @@ import lecture.LectureKind;
 import lecture.LectureInput;
 import lecture.CoreCourse;
 import lecture.ElectiveCourse;
+import lecture.Lecture;
 import lecture.SelectiveMajorCourse;
 
 public class LectureManager implements Serializable {
@@ -139,6 +141,14 @@ public class LectureManager implements Serializable {
 			lectures.get(i).printInfo(); // 그 객체의 정보 출력
 		} // end of for
 	} // end of viewLecture
+	
+	public int size() {
+		return lectures.size();
+	}
+	
+	public LectureInput get(int index ) {
+		return (Lecture)lectures.get(index);
+	}
 
 	public void showEditMenu() {
 		System.out.print("MENU\n");
@@ -152,4 +162,5 @@ public class LectureManager implements Serializable {
 		System.out.println("8. Exit");
 		System.out.print("Select one number between 1 - 8 : ");
 	}
+	
 } // end of class

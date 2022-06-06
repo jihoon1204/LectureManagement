@@ -10,17 +10,29 @@ public interface LectureInput {
 	public void setId(int id);
 
 	public void setName(String name);
+	
+	public String getName();
 
 	public void setDay(String day);
+	
+	public String getDay();
 
 	public void setTime(String time);
 
+	public String getTime();
+	
 	public void setPlace(String place) throws PlaceFormatException;
 
+	public String getPlace();
+	
 	public void setPname(String pname);
 
+	public String getPname();
+	
 	public void setPnum(String pnum);
 
+	public String getPnum();
+	
 	public void getUserInput(Scanner ques);
 
 	public void printInfo();

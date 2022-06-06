@@ -1,3 +1,4 @@
+package manager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager {
@@ -14,14 +16,15 @@ public class MenuManager {
 
 	public static void main(String[] args) {
 		Scanner ques = new Scanner(System.in);
-		LectureManager lecturemanager = getObject("lecturemanager.ser");
-		if (lecturemanager == null) {
-			lecturemanager = new LectureManager(ques);
+		LectureManager lectureManager = getObject("lecturemanager.ser");
+		if (lectureManager == null) {
+			lectureManager = new LectureManager(ques);
 		} else {
-			lecturemanager.ques = ques;
+			lectureManager.ques = ques;
 		}
-		selectMenu(ques, lecturemanager);
-		putObject(lecturemanager, "lecturemanager.ser");
+		WindowFrame frame = new WindowFrame(lectureManager);
+		selectMenu(ques, lectureManager);
+		putObject(lectureManager, "lecturemanager.ser");
 	} // end of void
 
 	public static void selectMenu(Scanner ques, LectureManager lecturemanager) {
