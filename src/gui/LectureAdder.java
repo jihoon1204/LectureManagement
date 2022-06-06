@@ -9,14 +9,12 @@ import javax.swing.SpringLayout;
 import manager.LectureManager;
 
 public class LectureAdder extends JPanel {
-	
 	LectureManager lectureManager;
 	
 	WindowFrame frame;
 
 	public LectureAdder(WindowFrame frame) {
 		this.frame = frame;
-		
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
@@ -66,7 +64,7 @@ public class LectureAdder extends JPanel {
 		panel.add(new JButton("save"));
 		panel.add(new JButton("cancle"));
 
-		SpringUtilities.makeCompactGrid(panel, 7, 2, 5, 5, 5, 5);
+		SpringUtilities.makeCompactGrid(panel, 8, 2, 5, 5, 5, 5);
 
 
 		this.add(panel);

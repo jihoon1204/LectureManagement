@@ -22,7 +22,11 @@ public class LectureManager implements Serializable {
 
 	LectureManager(Scanner ques) {
 		this.ques = ques;
-	}// end of LectureMager
+	}
+	
+	public void setScanner(Scanner ques) {
+		this.ques = ques;
+	}
 
 	public void addLecture() {
 		LectureInput lectureInput;
@@ -57,9 +61,9 @@ public class LectureManager implements Serializable {
 			catch (InputMismatchException e) {
 				System.out.println("Please put an integer between 1 and 3! ");
 				if (ques.hasNext()) {
-					ques.next();
-					kind = -1;
+					ques.next();	
 				} // end of if
+				kind = -1;
 			} // end of catch
 		} // end of while
 	} // end of addLecutre
@@ -137,6 +141,7 @@ public class LectureManager implements Serializable {
 	} // end of editLecture
 
 	public void viewLectures() {
+		System.out.println(" # of registered lectures:" + lectures.size());
 		for (int i = 0; i < lectures.size(); i++) { // for문을 이용한 lectures get 함수 출력
 			lectures.get(i).printInfo(); // 그 객체의 정보 출력
 		} // end of for

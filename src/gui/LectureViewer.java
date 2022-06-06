@@ -11,7 +11,6 @@ import lecture.LectureInput;
 import manager.LectureManager;
 
 public class LectureViewer extends JPanel {
-	
 	LectureManager lectureManager;
 	
 	WindowFrame frame;
@@ -20,8 +19,7 @@ public class LectureViewer extends JPanel {
 		this.frame = frame;
 		this.lectureManager = lectureManager;
 		 
-		
-//		System.out.println("***" + lectureManager.size() + "***");
+		System.out.println("***" + lectureManager.size() + "***");
 
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("ID");
@@ -43,9 +41,7 @@ public class LectureViewer extends JPanel {
 			row.add(li.getPname());
 			row.add(li.getPnum());
 			model.addRow(row);
-			
 		}
-
 		JTable table = new JTable(model);
 		JScrollPane sp = new JScrollPane(table);
 

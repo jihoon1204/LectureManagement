@@ -13,13 +13,11 @@ public class WindowFrame extends JFrame {
 	LectureAdder lectureadder;
 	LectureViewer lectureviewer;
 
-
-	
 	public WindowFrame(LectureManager lectureManager) {
+		this.lectureManager = lectureManager;
 		this.menuselection = new MenuSelection(this);
 		this.lectureadder = new LectureAdder(this);
 		this.lectureviewer = new LectureViewer(this, this.lectureManager);
-		this.lectureManager = lectureManager;
 		
 		this.setTitle("My Frame");
 		this.setSize(500, 300);
