@@ -97,7 +97,7 @@ public class MenuManager {
 		return lecturemanager;
 	}
 
-	public static LectureManager putObject(LectureManager lecturemanager, String filename) {
+	public static void putObject(LectureManager lecturemanager, String filename) {
 
 		try {
 			FileOutputStream file = new FileOutputStream(filename);
@@ -113,6 +113,5 @@ public class MenuManager {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return lecturemanager;
 	}
 } // end of class

@@ -16,7 +16,7 @@ public class WindowFrame extends JFrame {
 	public WindowFrame(LectureManager lectureManager) {
 		this.lectureManager = lectureManager;
 		this.menuselection = new MenuSelection(this);
-		this.lectureadder = new LectureAdder(this);
+		this.lectureadder = new LectureAdder(this, this.lectureManager);
 		this.lectureviewer = new LectureViewer(this, this.lectureManager);
 		
 		this.setTitle("My Frame");

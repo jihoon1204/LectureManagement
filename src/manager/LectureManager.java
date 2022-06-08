@@ -28,6 +28,17 @@ public class LectureManager implements Serializable {
 		this.ques = ques;
 	}
 
+	public void addLecture(String id, String name, String day, String time, String place, String pname, String pnum) {
+		LectureInput lectureInput = new CoreCourse(LectureKind.CoreCourse); // 
+		lectureInput.getUserInput(ques);
+		lectures.add(lectureInput);
+	}
+	
+	public void addLecture(LectureInput lectureInput) {
+		
+		lectures.add(lectureInput);
+	}
+	
 	public void addLecture() {
 		LectureInput lectureInput;
 		int kind = 0;

@@ -1,4 +1,4 @@
-package listener;
+package event;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,9 +19,10 @@ public class ButtonAddListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		JButton b = (JButton)e.getSource();
-		LectureAdder adder = frame.getLectureadder();
-		frame.setupPanel(adder);
+		frame.getContentPane().removeAll();
+		frame.getContentPane().add(frame.getLectureadder());
+		frame.revalidate();
+		frame.repaint();
 	}
 
 }

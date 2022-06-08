@@ -6,15 +6,17 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import event.LectureAdderCancleListener;
+import event.LectureAdderListener;
 import manager.LectureManager;
 
 public class LectureAdder extends JPanel {
-	LectureManager lectureManager;
-	
 	WindowFrame frame;
-
-	public LectureAdder(WindowFrame frame) {
+	LectureManager lectureManager;	
+	
+	public LectureAdder(WindowFrame frame, LectureManager lectureManager) {
 		this.frame = frame;
+		this.lectureManager = lectureManager;
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
@@ -61,8 +63,16 @@ public class LectureAdder extends JPanel {
 		panel.add(labelPnum);
 		panel.add(fieldPnum);
 
-		panel.add(new JButton("save"));
-		panel.add(new JButton("cancle"));
+		JButton saveButton = new JButton("save");
+		
+		saveButton.addActionListener(new LectureAdderListener(fieldID, fieldName, fieldDay, fieldTime,fieldPlace, fieldPname, fieldPnum, lectureManager));
+		
+		JButton cancleButton = new JButton("cancle");
+		cancleButton.addActionListener(new LectureAdderCancleListener(frame));
+		
+		
+		panel.add(saveButton);
+		panel.add(cancleButton);
 
 		SpringUtilities.makeCompactGrid(panel, 8, 2, 5, 5, 5, 5);
 

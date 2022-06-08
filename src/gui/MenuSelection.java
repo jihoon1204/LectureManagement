@@ -6,8 +6,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import listener.ButtonAddListener;
-import listener.ButtonViewListener;
+import event.ButtonAddListener;
+import event.ButtonViewListener;
 
 public class MenuSelection extends JPanel {
 	
