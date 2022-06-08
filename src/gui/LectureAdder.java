@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 import event.LectureAdderCancleListener;
-import event.LectureAdderListener;
+import event.LectureAdderSaveListener;
 import manager.LectureManager;
 
 public class LectureAdder extends JPanel {
@@ -65,7 +65,7 @@ public class LectureAdder extends JPanel {
 
 		JButton saveButton = new JButton("save");
 		
-		saveButton.addActionListener(new LectureAdderListener(fieldID, fieldName, fieldDay, fieldTime,
+		saveButton.addActionListener(new LectureAdderSaveListener(fieldID, fieldName, fieldDay, fieldTime,
 										fieldPlace, fieldPname, fieldPnum, lectureManager));
 		
 		JButton cancleButton = new JButton("cancle");

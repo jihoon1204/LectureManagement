@@ -15,7 +15,7 @@ import lecture.LectureInput;
 import lecture.LectureKind;
 import manager.LectureManager;
 
-public class LectureAdderListener implements ActionListener {
+public class LectureAdderSaveListener implements ActionListener {
 	JTextField fieldID;
 	JTextField fieldName;
 	JTextField fieldDay;
@@ -26,7 +26,7 @@ public class LectureAdderListener implements ActionListener {
 	
 	LectureManager lectureManager;
 	
-	public LectureAdderListener(JTextField fieldID, JTextField fieldName, JTextField fieldDay, JTextField fieldTime,
+	public LectureAdderSaveListener(JTextField fieldID, JTextField fieldName, JTextField fieldDay, JTextField fieldTime,
 			JTextField fieldPlace, JTextField fieldPname, JTextField fieldPnum, LectureManager lectureManager) {
 		
 		this.fieldID = fieldID;
