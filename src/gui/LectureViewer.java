@@ -12,7 +12,8 @@ import manager.LectureManager;
 
 public class LectureViewer extends JPanel {
 	LectureManager lectureManager;
-	
+	WindowFrame frame;
+
 	public LectureManager getLectureManager() {
 		return lectureManager;
 	}
@@ -20,7 +21,7 @@ public class LectureViewer extends JPanel {
 	public void setLectureManager(LectureManager lectureManager) {
 		this.lectureManager = lectureManager;
 		this.removeAll();
-		
+
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("ID");
 		model.addColumn("NAME");
@@ -29,7 +30,7 @@ public class LectureViewer extends JPanel {
 		model.addColumn("PLACE");
 		model.addColumn("PNAME");
 		model.addColumn("PNUM");
-		
+
 		for (int i = 0; i < lectureManager.size(); i++) {
 			Vector row = new Vector();
 			LectureInput li = lectureManager.get(i);
@@ -48,12 +49,10 @@ public class LectureViewer extends JPanel {
 		this.add(sp);
 	}
 
-	WindowFrame frame;
-	
 	public LectureViewer(WindowFrame frame, LectureManager lectureManager) {
 		this.frame = frame;
 		this.lectureManager = lectureManager;
-		 
+
 		System.out.println("***" + lectureManager.size() + "***");
 
 		DefaultTableModel model = new DefaultTableModel();
@@ -64,7 +63,7 @@ public class LectureViewer extends JPanel {
 		model.addColumn("PLACE");
 		model.addColumn("PNAME");
 		model.addColumn("PNUM");
-		
+
 		for (int i = 0; i < lectureManager.size(); i++) {
 			Vector row = new Vector();
 			LectureInput li = lectureManager.get(i);

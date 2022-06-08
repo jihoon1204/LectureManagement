@@ -26,8 +26,6 @@ public class LectureAdderListener implements ActionListener {
 	
 	LectureManager lectureManager;
 	
-
-	
 	public LectureAdderListener(JTextField fieldID, JTextField fieldName, JTextField fieldDay, JTextField fieldTime,
 			JTextField fieldPlace, JTextField fieldPname, JTextField fieldPnum, LectureManager lectureManager) {
 		

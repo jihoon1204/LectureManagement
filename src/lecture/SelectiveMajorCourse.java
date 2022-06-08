@@ -43,8 +43,8 @@ public class SelectiveMajorCourse extends AdditionalLecture {
 	public void printInfo() { // printInfo 함수 생성
 		String skind = getKindString();
 		System.out.println("kind : " + skind + "\nLecture Id : " + id + "\nLecture name : " + name + "\nLecture day : "
-				+ day + "\nLecture time : " + time + "\nLecture place : " + place
-				+ "\nProfessor Name : " + Pname + "\nProfessor Number : " + Pnum);
+				+ day + "\nLecture time : " + time + "\nLecture place : " + place + "\nProfessor Name : " + Pname
+				+ "\nProfessor Number : " + Pnum);
 	} // end of printInfo
 
 	public String getKindString() {

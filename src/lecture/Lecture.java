@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 import exceptions.PlaceFormatException;
 
-public abstract class Lecture implements LectureInput, Serializable { /**
-	 * 
-	 */
+public abstract class Lecture implements LectureInput, Serializable {
+	/**
+	* 
+	*/
 	private static final long serialVersionUID = -8853942943022200338L;
 
 	Scanner ques;
@@ -166,7 +167,7 @@ public abstract class Lecture implements LectureInput, Serializable { /**
 		String place = "";
 		System.out.println("Lecture Place:");
 		while (!place.contains("µ¿")) {
-			
+
 			place = ques.nextLine();
 			try {
 				this.setPlace(place);

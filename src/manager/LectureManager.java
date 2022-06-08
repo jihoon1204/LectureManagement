@@ -1,4 +1,5 @@
 package manager;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -23,22 +24,22 @@ public class LectureManager implements Serializable {
 	LectureManager(Scanner ques) {
 		this.ques = ques;
 	}
-	
+
 	public void setScanner(Scanner ques) {
 		this.ques = ques;
 	}
 
 	public void addLecture(String id, String name, String day, String time, String place, String pname, String pnum) {
-		LectureInput lectureInput = new CoreCourse(LectureKind.CoreCourse); // 
+		LectureInput lectureInput = new CoreCourse(LectureKind.CoreCourse); //
 		lectureInput.getUserInput(ques);
 		lectures.add(lectureInput);
 	}
-	
+
 	public void addLecture(LectureInput lectureInput) {
-		
+
 		lectures.add(lectureInput);
 	}
-	
+
 	public void addLecture() {
 		LectureInput lectureInput;
 		int kind = 0;
@@ -72,7 +73,7 @@ public class LectureManager implements Serializable {
 			catch (InputMismatchException e) {
 				System.out.println("Please put an integer between 1 and 3! ");
 				if (ques.hasNext()) {
-					ques.next();	
+					ques.next();
 				} // end of if
 				kind = -1;
 			} // end of catch
@@ -157,13 +158,13 @@ public class LectureManager implements Serializable {
 			lectures.get(i).printInfo(); // 그 객체의 정보 출력
 		} // end of for
 	} // end of viewLecture
-	
+
 	public int size() {
 		return lectures.size();
 	}
-	
-	public LectureInput get(int index ) {
-		return (Lecture)lectures.get(index);
+
+	public LectureInput get(int index) {
+		return (Lecture) lectures.get(index);
 	}
 
 	public void showEditMenu() {
@@ -178,5 +179,5 @@ public class LectureManager implements Serializable {
 		System.out.println("8. Exit");
 		System.out.print("Select one number between 1 - 8 : ");
 	}
-	
+
 } // end of class
